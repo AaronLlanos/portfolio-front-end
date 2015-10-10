@@ -1,0 +1,129 @@
+<div class="background-div">
+    <img ng-repeat="instaPhoto in instaPhotosMe | orderBy:'rank'" style="width: 20%; height: 20%;" class="img-responsive pull-left insta-photo" ng-src="{{instaPhoto.image}}">
+</div>
+<div class="row clear-bg-div"></div>
+<div class="row content-strip content-strip-top">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-xs-12 col-sm-4">
+			    <img class="img-circle img-responsive center-block" ng-src="https://graph.facebook.com/1404466291/picture?type=large">
+			    <p class="text-center" style="color: grey; font-size: 0.9em;">"Being a front-end web developer without an online portfolio is like being Picasso with no canvas"</p>
+			</div>
+			<div class="col-md-8 col-xs-12 col-sm-8">
+				<h3 class="text-center">Aaron Llanos<br><small>Web Development | User Interfacing</small></h3>
+				<hr>
+				<div class="col-xs-3 text-center">{{age}}</div>
+				<div class="col-xs-4 text-center">Austin, TX</div>
+				<div class="col-xs-5 text-center">B.S.A Computer Science</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+<div id="anchor-about" class="row content-strip bg-orange">
+	<div class="col-xs-12">
+		<h3 class="fancy-font text-center">About Me</h3>	
+		<hr>
+		<div class="col-xs-12 col-sm-4">
+			<div class="col-xs-12">
+				<div ng-controller="CarouselCtrl">
+	 				<carousel interval="myInterval" no-wrap="noWrapSlides">
+						<slide ng-repeat="slide in instaPhotosSchool | limitTo:10" active="slide.active">
+							<img ng-src="{{slide.image}}" style="margin:auto;">
+						</slide>
+				    </carousel>
+				</div>
+			</div>
+			<h3 class="fancy-font text-center">UT Austin-Hook 'Em</h3>
+			<hr>
+			<p class="comic-font">
+				I am a proud graduate of The University of Texas at Austin. Four and a half years of Texas Football, three hundred gallons of ☕️, and friends for a lifetime. This experience truly could not have been better. I link to think that the only way it could have been better is if I had more time to spend on The 40 acres.
+			</p>
+		</div>
+		<div class="col-xs-12 col-sm-4">
+			<div class="col-xs-12">
+				<div ng-controller="CarouselCtrl">
+					<carousel interval="myInterval" no-wrap="noWrapSlides">
+						<slide ng-repeat="slide in instaPhotosMila | limitTo:10" active="slide.active">
+							<img ng-src="{{slide.image}}" style="margin:auto;">
+						</slide>
+				    </carousel>
+				</div>
+			</div>
+			<h3 class="fancy-font text-center">Mila</h3>
+			<hr>
+			<p class="comic-font">
+				My beutiful little girl, Mila. She was born on April 23rd, 2015. She goes everywhere with me and she is the sweetest Husky known to mankind. There's not a single mean bone in her body.
+			</p>
+		</div>
+		<div class="col-xs-12 col-sm-4">
+			<div class="col-xs-12">
+				<div ng-controller="CarouselCtrl">
+					<carousel interval="myInterval" no-wrap="noWrapSlides">
+						<slide ng-repeat="slide in instaPhotosMe | limitTo:10" active="slide.active">
+							<img ng-src="{{slide.image}}" style="margin:auto;">
+						</slide>
+				    </carousel>
+				</div>
+			</div>
+			<h3 class="fancy-font text-center">Myself</h3>
+			<hr>
+			<p class="comic-font">
+				Hello, I am Aaron Llanos. I love to code and I also enjoy helping others with anything that I can. I have a HUGE family which I love with all of my heart. I love to skateboard, freestyle rap, jam out (to Pearl Jam, Red Hot Chili Peppers, Foo Fighters...), drive fast cars, watch movies, and eat popcorn. If I had to choose a favorite author it would most defintely be Kurt Vonnegut. I love <a href="http://campkesem.org/">Camp Kesem</a> and would do anything if it means helping out children from hardships. After all, they are the future of world and I must lead by example. If you would like to no more lets get in contact!
+			</p>
+		</div>
+	</div>
+</div>
+	
+</div>
+<div id="anchor-projects" class="row content-strip bg-green">
+	<div class="col-xs-12">
+		<h3 class="fancy-font text-center">Projects</h3>	
+		<hr>		
+		
+	</div>
+</div>
+<div id="anchor-skills" class="row content-strip bg-red" ng-controller="SkillsCtrl">
+	<div class="col-xs-12">
+		<h3 class="fancy-font text-center">Skills</h3>
+		<hr>
+		Sort by: &nbsp;
+		<button class="btn btn-sm btn-info" ng-click="order('exp')">Experience</button>
+		<button class="btn btn-sm btn-info" ng-click="order('penjoyment')">Personal Enjoyment</button>
+		<br>
+		<br>
+		<div class="col-xs-6 col-sm-3" ng-repeat="skill in mySkills | orderBy:predicate">
+			<div class="card card-slide" tooltip-placement="bottom" tooltip="{{skill.desc}}">
+				<h4 class="comic-font text-center">{{skill.name}}</h4>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="anchor-contact" class="row content-strip bg-purple" ng-controller="ContactCtrl">
+	<div class="container">
+		<div class="row">
+			<h3 class="fancy-font text-center">Contact (under construction)</h3>	
+			<hr>
+			<form class="form">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 form-group">
+						<input id="firstname" type="text" class="form-control" placeholder="First Name" required>
+						<input id="lastname" type="text" class="form-control" placeholder="Last Name" required>
+						<input id="email" type="email" class="form-control" placeholder="your_address@wherever.ending" required>
+						<hr>
+						<input ng-click="postComment()" class="btn btn-success" class="form-control" type="submit"></button>
+					</div>
+					<div class="col-xs-12 col-sm-6 form-group">
+						<textarea id="comment" type="text" rows="9" class="form-control" placeholder="Enter your comment here!!" required></textarea>
+					</div>
+				</div>
+			</form>
+
+			<!-- <div class="col-xs-12 col-sm-2"><h4 class="comic-font">or</h4></div>
+			<div class="col-sm-5">
+				<rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" ></rating>
+				<span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+			</div> -->
+		</div>
+	</div>
+</div>

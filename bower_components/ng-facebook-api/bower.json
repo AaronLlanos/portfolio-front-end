@@ -1,0 +1,21 @@
+{
+  "name": "ng-facebook-api",
+  "version": "0.0.2",
+  "homepage": "https://github.com/jberta93/ng-facebook-api",
+  "description": "Facebook API  wrapper for AngularJS",
+  "keywords": [
+    "facebook"
+  ],
+  "authors": [
+    "Lorenzo Bertacchi"
+  ],
+  "main": "./dist/ng-facebook-api.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ] 
+}

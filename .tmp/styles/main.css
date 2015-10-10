@@ -1,0 +1,230 @@
+/* Font Import */
+@font-face {
+  font-family: 'Gloria Hallelujah';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Gloria Hallelujah'), local('GloriaHallelujah'), url(https://fonts.gstatic.com/s/gloriahallelujah/v8/CA1k7SlXcY5kvI81M_R28YGdvEu4SOXaLqFXyFUihk4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'Comic Neue Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('ComicNeue-Regular'), local('Comic Neue Regular') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  position: relative;
+  padding: 0;
+}
+.content-strip{
+  height: 100%;
+  padding-bottom: 25px;
+  padding-top: 30px;
+}
+    .content-strip-top{
+      background-color: #FFF;
+      box-shadow: 0px -25px 70px #000;
+    }
+  .row.clear-bg-div{
+    margin-top: 300px;
+  }
+  div.content-strip-top > div.container > div.row > div.col-md-4 > img{
+    margin-top: -120px;
+  }
+.background-div{
+  position: fixed;
+  left: 0;
+  top: 50px;
+  z-index: -100;
+}
+
+/* Angular bootstrap ui.bootstrap fix. This eliminates improper app routing from empty bootstrap href components */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer !important; }
+/*.nav > li > a {pointer-events: none;}*/
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+/* Angular animate classes */
+.insta-photo.ng-enter,
+.insta-photo.ng-leave,
+.insta-photo.ng-move {
+  transition: 0.9s ease all;
+}
+
+.insta-photo.ng-enter,
+.insta-photo.ng-move {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.insta-photo.ng-move.ng-move-active,
+.insta-photo.ng-enter.ng-enter-active {
+  opacity: 1;
+  height: 120px;
+}
+
+.insta-photo.ng-leave {
+  opacity: 1;
+  overflow: hidden;
+}
+
+.insta-photo.ng-leave.ng-leave-active {
+  opacity: 0;
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+
+/* Custom styles */
+.fancy-font{
+  font-family: 'Gloria Hallelujah', cursive;
+}
+.bg-green{
+  background-color: rgb(153, 243, 167) !important;
+}
+.bg-pink{
+  background-color: rgb(255, 0, 132) !important;
+}
+.bg-blue{
+  background-color: rgb(118, 218, 255) !important;
+}
+.bg-purple{
+  background-color: rgb(209, 188, 255) !important;
+}
+.bg-orange{
+  background-color: rgb(237, 152, 25) !important;
+}
+.bg-red{
+  background-color: rgb(249, 118, 133) !important;
+}
+.bg-yellow{
+  background-color: rgb(243, 229, 158) !important;
+  /*color: rgb(118, 218, 255);*/
+}
+
+.comic-font{
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.card{
+  padding: 20px;
+  color: #76DAFF;
+  box-shadow: -2px -2px 1px 0px #76DAFF;
+  margin-bottom: 10px;
+  background-color: #000;
+}
+.card-slide{ 
+  transition: box-shadow 0.4s, -webkit-transform 0.4s; 
+  transition: box-shadow 0.4s, transform 0.4s;
+}
+  
+.card-slide:hover{
+  -webkit-transform: translate(6px, 6px);
+          transform: translate(6px, 6px);
+  box-shadow: -6px -6px 10px 0px #76DAFF;
+  color: #76DAFF;
+}
+
+.underline-animate {
+  position: relative;
+}
+.underline-animate:after {
+  display: block;
+  position: absolute;
+  left: 0;
+  /*bottom: -10px;*/
+  width: 0;
+  height: 10px;
+  background-color: #FFF;
+  content: "";
+  transition: width 0.4s;
+}
+.underline-animate:hover.active {
+  color: #FFF !important;
+}
+.underline-animate:hover:after.active {
+  width: 100% !important;
+}
+
+  /* Overrides */
