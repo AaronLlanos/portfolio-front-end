@@ -22,6 +22,7 @@
              fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -32,7 +33,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 </head>
-<body ng-app="portfolioApp" data-spy="scroll" data-target="#scrollspy">
+<body ng-app="portfolioApp" data-spy="scroll" data-target="#scrollspy-nav" data-offset="50">
     <!--[if lte IE 8]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -84,6 +85,8 @@
     <script src="scripts/controllers/skills.js"></script>
     <script src="scripts/directives/angled-navbar.js"></script>
     <script src="scripts/directives/angled-footer.js"></script>
+    <script src="scripts/controllers/feedback.js"></script>
+    <script src="scripts/controllers/projects.js"></script>
     <!-- endbuild -->
 </body>
 </html>

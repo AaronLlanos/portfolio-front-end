@@ -1,4 +1,4 @@
-<nav id="scrollspy" class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="NavbarCtrl">
+<nav id="scrollspy-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="NavbarCtrl">
     <div class="container">
         <div class="navbar-header">
 
@@ -16,6 +16,52 @@
             <ul class="nav navbar-nav">
                 <li class="underline-animate" ng-repeat="item in navItems"><a href="{{item.anchor}}" ng-click="gotoAnchor($event, item.anchor)">{{item.name}}</a></li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a popover-template="popover.signupTemplate" popover-title="Signup" popover-trigger="click" popover-placement="bottom">Signup</a></li>
+                <li><a popover-template="popover.loginTemplate" popover-title="Login" popover-trigger="click" popover-placement="bottom">Login</a></li>
+                <script type="text/ng-template" id="loginTemplate.html">
+                    <div class="alert hidden">
+                        <p id="alert-text"><b id="alert-type"></b><span id="alert-message"></span></p>
+                    </div>
+                    <div class="form-group">
+                      <input type="email" placeholder="Email" ng-model="login.email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="password" placeholder="Password" ng-model="login.password" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success" ng-click="login.submit()">Submit</button>
+                    </div>
+                </script>
+                <script type="text/ng-template" id="signupTemplate.html">
+                    <div class="alert hidden">
+                        <p id="alert-text"><b id="alert-type"></b><span id="alert-message"></span></p>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="First Name" ng-model="signup.firstname" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="Last Name" ng-model="signup.lastname" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="email" placeholder="Email" ng-model="signup.email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="password" placeholder="Password" ng-model="signup.password1" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="password" placeholder="Re-type Password" ng-model="signup.password2" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success" ng-click="signup.submit()">Submit</button>
+                    </div>
+                </script>
+            </ul>
+        </div>
+    </div>
+    <div id="nav-alert" ng-show="notification.show" class="row navalert-show">
+        <div class="container">
+            <p><b ng-bind="notification.type"></b>&nbsp;<span ng-bind="notification.message"></span></p>
         </div>
     </div>
 </nav>

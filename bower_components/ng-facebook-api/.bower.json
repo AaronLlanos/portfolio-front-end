@@ -26,6 +26,5 @@
   },
   "_source": "git://github.com/jberta93/ng-facebook-api.git",
   "_target": "~0.1.1",
-  "_originalSource": "ng-facebook-api",
-  "_direct": true
+  "_originalSource": "ng-facebook-api"
 }
