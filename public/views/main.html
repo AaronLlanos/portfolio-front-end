@@ -76,20 +76,34 @@
 </div>
 	
 </div>
-<div id="anchor-projects" class="row content-strip bg-green" ng-controller="ProjectsCtrl" data-spy="scroll" data-target="#scrollspy-projects" style="position: relative !important;">
+<div id="anchor-projects" class="row content-strip bg-green" ng-controller="ProjectsCtrl">
 	<div class="col-xs-12">
 		<h3 class="fancy-font text-center">Projects</h3>	
 		<hr>
 		<div class="col-xs-12 col-sm-3">
 			<ul id="scrollspy-projects" class="nav nav-pills nav-stacked" role="navigation">
-				<li ng-repeat="project in githubProjects | orderBy:predicate" role="presentation"><a href="#{{project.id}}">{{project.name}}</a></li>
+				<li ng-repeat="project in githubProjects | orderBy:predicate" role="presentation"><a href="#{{project.id}}" ng-click="gotoAnchor($event, item.anchor)">{{project.name}}</a></li>
 			</ul>
 		</div>
 		<div class="col-xs-12 col-sm-9 table-scroll" style="overflow-y: scroll; max-height: 460px;">
-			<div ng-repeat="project in githubProjects | orderBy:predicate" id="{{project.id}}" style="height: 460px;">
-				<h4>{{project.name}}</h4>
-				<p> {{project.description}} <a class="btn btn-info" href="{{project.html_url}}">View Source</a></p>
+			<div ng-repeat="project in githubProjects | orderBy:predicate | limitTo:10" id="{{project.id}}" class="card card-transparent">
+				<h4>{{project.name}} <small>&nbsp;Last Updated: {{format(project.updated_at)}}</small></h4>
+				<p> {{project.description}} </p>
 				<hr>
+				<div class="row">
+					<div class="col-xs-2">
+						<h4 class="text-center label label-info"><i class="fa fa-font"></i> &nbsp;{{project.language}}</h4>
+					</div>
+					<div class="col-xs-2">
+						<h5 class="text-center label label-info"><i class="fa fa-code-fork"></i> &nbsp;{{project.forks}}</h5>
+					</div>
+					<div class="col-xs-2">
+						<h5 class="text-center label label-info"><i class="fa fa-eye"></i> &nbsp;{{project.watchers}}</h5>
+					</div>
+					<div class="col-xs-6">
+						<a href="{{project.html_url}}" class="btn btn-default"><i class="fa fa-github-alt"></i> &nbsp;View Source on Github</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -104,7 +118,7 @@
 		<br>
 		<br>
 		<div class="col-xs-6 col-sm-3" ng-repeat="skill in mySkills | orderBy:predicate">
-			<div class="card card-slide" tooltip-placement="bottom" tooltip="{{skill.desc}}">
+			<div class="card card-dark card-slide" tooltip-placement="bottom" tooltip="{{skill.desc}}">
 				<h4 class="comic-font text-center">{{skill.name}}</h4>
 			</div>
 		</div>
